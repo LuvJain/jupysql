@@ -55,6 +55,7 @@ class SqlCmdMagic(Magics, Configurable):
             "explore",
             "snippets",
             "connect",
+            "users",
         ]
         COMMANDS_CONNECTION_REQUIRED = [
             "tables",
@@ -62,8 +63,9 @@ class SqlCmdMagic(Magics, Configurable):
             "test",
             "profile",
             "explore",
+            "users",
         ]
-        COMMANDS_SQLALCHEMY_ONLY = ["tables", "columns", "test", "explore"]
+        COMMANDS_SQLALCHEMY_ONLY = ["tables", "columns", "test", "explore", "users"]
 
         VALID_COMMANDS_MSG = (
             f"Missing argument for %sqlcmd. "
@@ -126,6 +128,7 @@ class SqlCmdMagic(Magics, Configurable):
             "explore": explore,
             "snippets": snippets,
             "connect": connect,
+            "users": users,
         }
 
         cmd = router.get(cmd_name)
