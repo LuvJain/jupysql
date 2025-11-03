@@ -12,6 +12,7 @@ from sql.cmd.profile import profile
 from sql.cmd.explore import explore
 from sql.cmd.snippets import snippets
 from sql.cmd.connect import connect
+from sql.cmd.users import users
 from sql.connection import ConnectionManager
 from sql.util import check_duplicate_arguments
 
