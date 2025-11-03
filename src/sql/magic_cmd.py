@@ -12,6 +12,7 @@ from sql.cmd.profile import profile
 from sql.cmd.explore import explore
 from sql.cmd.snippets import snippets
 from sql.cmd.connect import connect
+from sql.cmd.users import users
 from sql.connection import ConnectionManager
 from sql.util import check_duplicate_arguments
 
@@ -54,6 +55,7 @@ class SqlCmdMagic(Magics, Configurable):
             "explore",
             "snippets",
             "connect",
+            "users",
         ]
         COMMANDS_CONNECTION_REQUIRED = [
             "tables",
@@ -61,8 +63,9 @@ class SqlCmdMagic(Magics, Configurable):
             "test",
             "profile",
             "explore",
+            "users",
         ]
-        COMMANDS_SQLALCHEMY_ONLY = ["tables", "columns", "test", "explore"]
+        COMMANDS_SQLALCHEMY_ONLY = ["tables", "columns", "test", "explore", "users"]
 
         VALID_COMMANDS_MSG = (
             f"Missing argument for %sqlcmd. "
@@ -125,6 +128,7 @@ class SqlCmdMagic(Magics, Configurable):
             "explore": explore,
             "snippets": snippets,
             "connect": connect,
+            "users": users,
         }
 
         cmd = router.get(cmd_name)
